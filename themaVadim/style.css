@@ -4,7 +4,7 @@ Author: Vadim pisa
 Author URI: http://27266.hosts2.ma-cloud.nl/bewijzenmap/periode1.3/cms/wordpress/
 Version: 1.0
 */
-body{
+/*body{
     font-family: sans-serif ;
     background: white ;
     margin: 0; 
@@ -15,7 +15,7 @@ body{
 a{
 color: royalblue;
 }
-/* Layout */
+
 .bericht{
     border-bottom: 6px double royalblue;
 }
@@ -31,7 +31,7 @@ color: royalblue;
 .container img {
     max-width: 100%;
 }
-/* Opmaak header*/
+
 header{
 background: royalblue;
 color: #fff;
@@ -42,7 +42,7 @@ min-height: 20vw;
 header  a{
     color: #fff;
 }
-/* Opmaak Menu*/
+
 nav{
     margin-left: -2em;
     margin-right:-2em;
@@ -69,7 +69,7 @@ nav .menu .current-menu-item a{
     background-color: blue;
     border-right: .3em solid red;
 }
-/*Het submenu */
+
 .sub-menu{
     list-style-type: none;
     margin: 0;
@@ -117,15 +117,216 @@ nav .menu .current-menu-item a{
     }
 }
 
-/* Opmaak submenu*/
+
 .sub-menu{
     position: absolute;
 }
-/* Opmaak footer */
+
 footer  a{
     color: #fff;
 }
 footer{
 background: royalblue;
 color: #fff;
+}*/
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 0;
+  min-height: 100vw;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+a {
+  color: royalblue;
+}
+
+/* layout */
+.bericht {
+  border-bottom: 6px double royalblue;
+}
+
+.bericht:last-of-type {
+  border-bottom: 0;
+}
+
+.container {
+  padding: 0 2em;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container img {
+  max-width: 100%;
+}
+
+/* opmaak header */
+header {
+  background: royalblue;
+  color: #fff;
+  background-size: cover;
+  background-position: center center;
+  min-height: 20vw;
+}
+
+header p, h1, h2, h3, h4 {
+  font-family: 'Roboto', sans-serif;
+}
+
+header>.container>a {
+  text-decoration: none;
+}
+
+header>.container>a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+
+header a {
+  color: #fff;
+}
+
+/* opmaak menu */
+nav {
+  margin-left: -2em;
+  margin-right: -2em;
+}
+
+nav ul.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+nav .menu a {
+  text-decoration: none;
+  display: block;
+  background-color: royalblue;
+  padding: .5em 2em;
+  border-bottom: 1px solid #eee;
+}
+
+nav .menu a:hover {
+  background-color: blue;
+}
+
+nav .menu .current-menu-item a {
+  background-color: blue;
+  border-right: .3em solid red;
+}
+
+/* het submenu */
+.sub-menu {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1em;
+}
+
+.sub-menu * {
+  transition: all .5s ease-out;
+}
+
+.sub-menu.menu-verbergen {
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+.menu-item-has-children>a::before {
+  content: '\25BC';
+  margin-right: 2em;
+}
+
+.menu-item-has-children>a.menu-is-open::before {
+  content: '\25B2';
+  margin-right: 2em;
+}
+
+.sub-menu a {
+  border-left: 1em solid blue;
+}
+.zoek-term-in-kop {
+  color: royalblue;
+}
+
+aside h4 {
+  color: royalblue;
+}
+.screen-reader-text {
+  display: none;
+}
+.postMetaData {
+  font-size: .8em;
+  color: #aaa;
+}
+.postMetaData a {
+  color: #aaa;
+}
+.postMetaData a:hover {
+  color: royalblue;
+}
+.postMetaData ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+.postMetaData li {
+  display: inline;
+}
+.postMetaData li:after {
+  content: " | ";
+}
+
+@media screen and (min-width: 850px) {
+  header .container {
+    border-right: 1px solid #eee;
+    min-height: 20vw;
+    margin-bottom: -2em;
+  }
+  nav ul.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(12em, 1fr));
+    border-left: 1px solid;
+  }
+
+  nav ul.menu a {
+    border-right: 1px solid #eee;
+  }
+
+  nav #menu-footermenu a {
+    font-size: .8em;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-column-gap: 5em;
+  }
+  aside {
+    border-right: 1px solid royalblue;
+    margin-right: -2em;
+  }
+}
+
+/* opmaak submenu */
+.sub-menu {
+  position: absolute;
+}
+
+/* opmaak footer */
+footer {
+  background: royalblue;
+  color: #fff;
+}
+
+footer a {
+  color: #fff;
 }
